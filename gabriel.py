@@ -1,13 +1,15 @@
 from datetime import datetime
+import locale
 import emoji
+
+locale.setlocale(locale.LC_ALL, 'es-MX') 
 
 class Gabriel:
 
     def __init__(self):
         self.author = 'Alejandro Huerta Campos a.k.a N3sh'
         self.city = 'Querétaro'
-        self.date_string = '02-08-2021'
-        self.date_object = datetime.strptime(self.date_string, '%d-%m-%Y')
+        self.date_object = datetime(2021, 8, 2)
         self.name = 'Gabe'
         self.full_name = 'Gabriel López'
         self.town = 'Querétaro'
@@ -17,7 +19,7 @@ class Gabriel:
 
     def say_goodbye(self):
         str = f"""
-                                                    {self.city}, {self.town} a {self.date_object.date()}
+                                                    {self.city}, {self.town} a {self.date_object.strftime('%d de %B del %Y')}
 
             ¡{self.name}! {self.meme} {emoji.emojize(':grinning_squinting_face:')}
 
